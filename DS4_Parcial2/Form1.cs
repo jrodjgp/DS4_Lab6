@@ -12,9 +12,15 @@ namespace DS4_Parcial2
 {
     public partial class Form1 : Form
     {
+        private string codigoActual = "";
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
