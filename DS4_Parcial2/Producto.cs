@@ -15,6 +15,5 @@ namespace DS4_Parcial2
         public string Categoria { get; set; }
         public int StockLocal { get; set; }
         public int StockGeneral { get; set; }
-        public string RutaImagen { get; set; }
     }
 }
