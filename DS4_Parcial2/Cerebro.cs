@@ -43,8 +43,9 @@ namespace DS4_Parcial2
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    MessageBox.Show("Error de excepcion" + ex, "Error");
                     producto = null;
                 }
             }
@@ -93,8 +94,9 @@ namespace DS4_Parcial2
                     transaccion.Commit();
                     return true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    MessageBox.Show("Error de excepcion" + ex, "Error");
                     if (transaccion != null)
                     {
                         transaccion.Rollback();
@@ -142,12 +144,10 @@ namespace DS4_Parcial2
 
                     cmdReponer.ExecuteNonQuery();
 
-                    // (Aquí podrías poner un mensaje que la UI pueda leer: "Producto repuesto")
                 }
                 else
                 {
-                    // No hay stock local NI general. No se hace nada.
-                    // (Aquí podrías registrar una alerta: "PRODUCTO AGOTADO TOTALMENTE")
+                    MessageBox.Show("Error de excepcion", "Error");
                 }
             }
         }
