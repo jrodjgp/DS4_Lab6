@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.p_VendingMachine = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_Empujar = new System.Windows.Forms.Label();
+            this.p_Dispensador = new System.Windows.Forms.PictureBox();
             this.p_Inferior = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,27 +55,29 @@
             this.lbl_Soda = new System.Windows.Forms.Label();
             this.lbl_TeFrio = new System.Windows.Forms.Label();
             this.P_SidePanel = new System.Windows.Forms.Panel();
-            this.btn_Pagar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_PagueAqui = new System.Windows.Forms.Label();
             this.num_Pago = new System.Windows.Forms.NumericUpDown();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lbl_Precio = new System.Windows.Forms.Label();
+            this.lbl_ProductoElegido = new System.Windows.Forms.Label();
+            this.lbl_Pantallita = new System.Windows.Forms.Label();
+            this.p_BordePantallota = new System.Windows.Forms.Panel();
+            this.p_Pantallota = new System.Windows.Forms.Panel();
+            this.btn_Data = new System.Windows.Forms.Button();
+            this.btn_Pagar = new System.Windows.Forms.Button();
             this.btn_3 = new System.Windows.Forms.Button();
             this.btn_2 = new System.Windows.Forms.Button();
             this.btn_1 = new System.Windows.Forms.Button();
             this.btn_F = new System.Windows.Forms.Button();
             this.btn_C = new System.Windows.Forms.Button();
             this.btn_H = new System.Windows.Forms.Button();
-            this.lbl_Pantallita = new System.Windows.Forms.Label();
             this.lbl_Empresa = new System.Windows.Forms.Label();
             this.timerInput = new System.Windows.Forms.Timer(this.components);
-            this.p_BordePantallota = new System.Windows.Forms.Panel();
-            this.p_Pantallota = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbl_ProductoElegido = new System.Windows.Forms.Label();
-            this.lbl_Precio = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.timerLimpieza = new System.Windows.Forms.Timer(this.components);
             this.p_VendingMachine.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p_Dispensador)).BeginInit();
             this.p_Inferior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -89,11 +91,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Cafe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Te)).BeginInit();
             this.P_SidePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Pago)).BeginInit();
+            this.panel7.SuspendLayout();
             this.p_BordePantallota.SuspendLayout();
             this.p_Pantallota.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // p_VendingMachine
@@ -114,30 +116,30 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.panel2.Controls.Add(this.lbl_Empujar);
+            this.panel2.Controls.Add(this.p_Dispensador);
             this.panel2.Location = new System.Drawing.Point(63, 668);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(721, 174);
             this.panel2.TabIndex = 8;
             // 
-            // lbl_Empujar
+            // p_Dispensador
             // 
-            this.lbl_Empujar.AutoSize = true;
-            this.lbl_Empujar.Font = new System.Drawing.Font("Broadway", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Empujar.ForeColor = System.Drawing.Color.White;
-            this.lbl_Empujar.Location = new System.Drawing.Point(162, 39);
-            this.lbl_Empujar.Name = "lbl_Empujar";
-            this.lbl_Empujar.Size = new System.Drawing.Size(395, 91);
-            this.lbl_Empujar.TabIndex = 0;
-            this.lbl_Empujar.Text = "EMPUJE";
+            this.p_Dispensador.BackColor = System.Drawing.Color.Transparent;
+            this.p_Dispensador.Location = new System.Drawing.Point(96, 31);
+            this.p_Dispensador.Name = "p_Dispensador";
+            this.p_Dispensador.Size = new System.Drawing.Size(522, 115);
+            this.p_Dispensador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p_Dispensador.TabIndex = 0;
+            this.p_Dispensador.TabStop = false;
+            this.p_Dispensador.Visible = false;
             // 
             // p_Inferior
             // 
             this.p_Inferior.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.p_Inferior.Controls.Add(this.pictureBox9);
             this.p_Inferior.Controls.Add(this.pictureBox7);
             this.p_Inferior.Controls.Add(this.label5);
             this.p_Inferior.Controls.Add(this.pictureBox8);
-            this.p_Inferior.Controls.Add(this.pictureBox9);
             this.p_Inferior.Controls.Add(this.label6);
             this.p_Inferior.Controls.Add(this.label7);
             this.p_Inferior.Location = new System.Drawing.Point(61, 455);
@@ -149,10 +151,12 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = global::DS4_Parcial2.Properties.Resources.C2;
             this.pictureBox7.Location = new System.Drawing.Point(409, 25);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(92, 89);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
             // 
@@ -172,10 +176,12 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::DS4_Parcial2.Properties.Resources.F1;
             this.pictureBox8.Location = new System.Drawing.Point(216, 25);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(92, 89);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 10;
             this.pictureBox8.TabStop = false;
             // 
@@ -186,6 +192,7 @@
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(92, 89);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 9;
             this.pictureBox9.TabStop = false;
             // 
@@ -218,10 +225,10 @@
             // p_Medio
             // 
             this.p_Medio.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.p_Medio.Controls.Add(this.pictureBox6);
             this.p_Medio.Controls.Add(this.pictureBox4);
             this.p_Medio.Controls.Add(this.label2);
             this.p_Medio.Controls.Add(this.pictureBox5);
-            this.p_Medio.Controls.Add(this.pictureBox6);
             this.p_Medio.Controls.Add(this.label3);
             this.p_Medio.Controls.Add(this.label4);
             this.p_Medio.Location = new System.Drawing.Point(61, 270);
@@ -233,10 +240,12 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::DS4_Parcial2.Properties.Resources.H3;
             this.pictureBox4.Location = new System.Drawing.Point(409, 30);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(92, 89);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
             // 
@@ -256,20 +265,24 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::DS4_Parcial2.Properties.Resources.C1;
             this.pictureBox5.Location = new System.Drawing.Point(216, 30);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(92, 89);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::DS4_Parcial2.Properties.Resources.F2;
             this.pictureBox6.Location = new System.Drawing.Point(33, 30);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(92, 89);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
             // 
@@ -318,6 +331,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::DS4_Parcial2.Properties.Resources.C3;
             this.pictureBox1.Location = new System.Drawing.Point(33, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(92, 89);
@@ -328,6 +342,7 @@
             // PB_Cafe
             // 
             this.PB_Cafe.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Cafe.Image = global::DS4_Parcial2.Properties.Resources.F3;
             this.PB_Cafe.Location = new System.Drawing.Point(409, 30);
             this.PB_Cafe.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Cafe.Name = "PB_Cafe";
@@ -339,6 +354,7 @@
             // PB_Te
             // 
             this.PB_Te.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Te.Image = global::DS4_Parcial2.Properties.Resources.H1;
             this.PB_Te.Location = new System.Drawing.Point(216, 30);
             this.PB_Te.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Te.Name = "PB_Te";
@@ -405,20 +421,15 @@
             this.P_SidePanel.Size = new System.Drawing.Size(179, 546);
             this.P_SidePanel.TabIndex = 1;
             // 
-            // btn_Pagar
+            // panel1
             // 
-            this.btn_Pagar.BackColor = System.Drawing.Color.Black;
-            this.btn_Pagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Pagar.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Pagar.ForeColor = System.Drawing.Color.Gold;
-            this.btn_Pagar.Location = new System.Drawing.Point(58, 471);
-            this.btn_Pagar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Pagar.Name = "btn_Pagar";
-            this.btn_Pagar.Size = new System.Drawing.Size(60, 28);
-            this.btn_Pagar.TabIndex = 9;
-            this.btn_Pagar.Text = "Pagar";
-            this.btn_Pagar.UseVisualStyleBackColor = false;
-            this.btn_Pagar.Click += new System.EventHandler(this.btn_Pagar_Click);
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.lbl_PagueAqui);
+            this.panel1.Controls.Add(this.num_Pago);
+            this.panel1.Location = new System.Drawing.Point(17, 374);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(143, 90);
+            this.panel1.TabIndex = 14;
             // 
             // lbl_PagueAqui
             // 
@@ -442,6 +453,108 @@
             this.num_Pago.Name = "num_Pago";
             this.num_Pago.Size = new System.Drawing.Size(94, 24);
             this.num_Pago.TabIndex = 7;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Controls.Add(this.lbl_Precio);
+            this.panel7.Controls.Add(this.lbl_ProductoElegido);
+            this.panel7.Controls.Add(this.lbl_Pantallita);
+            this.panel7.Location = new System.Drawing.Point(17, 126);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(143, 116);
+            this.panel7.TabIndex = 13;
+            // 
+            // lbl_Precio
+            // 
+            this.lbl_Precio.AutoSize = true;
+            this.lbl_Precio.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lbl_Precio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Precio.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Precio.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Precio.Location = new System.Drawing.Point(46, 80);
+            this.lbl_Precio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Precio.Name = "lbl_Precio";
+            this.lbl_Precio.Size = new System.Drawing.Size(45, 18);
+            this.lbl_Precio.TabIndex = 12;
+            this.lbl_Precio.Text = "Precio";
+            // 
+            // lbl_ProductoElegido
+            // 
+            this.lbl_ProductoElegido.AutoSize = true;
+            this.lbl_ProductoElegido.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lbl_ProductoElegido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_ProductoElegido.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductoElegido.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_ProductoElegido.Location = new System.Drawing.Point(12, 38);
+            this.lbl_ProductoElegido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ProductoElegido.MaximumSize = new System.Drawing.Size(0, 100);
+            this.lbl_ProductoElegido.Name = "lbl_ProductoElegido";
+            this.lbl_ProductoElegido.Size = new System.Drawing.Size(113, 18);
+            this.lbl_ProductoElegido.TabIndex = 11;
+            this.lbl_ProductoElegido.Text = "Producto elegido:";
+            this.lbl_ProductoElegido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Pantallita
+            // 
+            this.lbl_Pantallita.AutoSize = true;
+            this.lbl_Pantallita.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lbl_Pantallita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Pantallita.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Pantallita.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Pantallita.Location = new System.Drawing.Point(32, 16);
+            this.lbl_Pantallita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Pantallita.Name = "lbl_Pantallita";
+            this.lbl_Pantallita.Size = new System.Drawing.Size(76, 18);
+            this.lbl_Pantallita.TabIndex = 0;
+            this.lbl_Pantallita.Text = "Bienvenido!";
+            // 
+            // p_BordePantallota
+            // 
+            this.p_BordePantallota.BackColor = System.Drawing.Color.White;
+            this.p_BordePantallota.Controls.Add(this.p_Pantallota);
+            this.p_BordePantallota.Location = new System.Drawing.Point(17, 20);
+            this.p_BordePantallota.Name = "p_BordePantallota";
+            this.p_BordePantallota.Size = new System.Drawing.Size(143, 89);
+            this.p_BordePantallota.TabIndex = 10;
+            // 
+            // p_Pantallota
+            // 
+            this.p_Pantallota.BackColor = System.Drawing.Color.Black;
+            this.p_Pantallota.Controls.Add(this.btn_Data);
+            this.p_Pantallota.Location = new System.Drawing.Point(12, 10);
+            this.p_Pantallota.Name = "p_Pantallota";
+            this.p_Pantallota.Size = new System.Drawing.Size(119, 68);
+            this.p_Pantallota.TabIndex = 0;
+            // 
+            // btn_Data
+            // 
+            this.btn_Data.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Data.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Data.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Data.ForeColor = System.Drawing.Color.Lime;
+            this.btn_Data.Location = new System.Drawing.Point(3, 23);
+            this.btn_Data.Name = "btn_Data";
+            this.btn_Data.Size = new System.Drawing.Size(113, 23);
+            this.btn_Data.TabIndex = 0;
+            this.btn_Data.Text = "Ver data";
+            this.btn_Data.UseVisualStyleBackColor = false;
+            this.btn_Data.Click += new System.EventHandler(this.btn_Data_Click);
+            // 
+            // btn_Pagar
+            // 
+            this.btn_Pagar.BackColor = System.Drawing.Color.Black;
+            this.btn_Pagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Pagar.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pagar.ForeColor = System.Drawing.Color.Gold;
+            this.btn_Pagar.Location = new System.Drawing.Point(58, 471);
+            this.btn_Pagar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Pagar.Name = "btn_Pagar";
+            this.btn_Pagar.Size = new System.Drawing.Size(60, 28);
+            this.btn_Pagar.TabIndex = 9;
+            this.btn_Pagar.Text = "Pagar";
+            this.btn_Pagar.UseVisualStyleBackColor = false;
+            this.btn_Pagar.Click += new System.EventHandler(this.btn_Pagar_Click);
             // 
             // btn_3
             // 
@@ -533,20 +646,6 @@
             this.btn_H.UseVisualStyleBackColor = false;
             this.btn_H.Click += new System.EventHandler(this.BotonClick);
             // 
-            // lbl_Pantallita
-            // 
-            this.lbl_Pantallita.AutoSize = true;
-            this.lbl_Pantallita.BackColor = System.Drawing.SystemColors.InfoText;
-            this.lbl_Pantallita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Pantallita.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Pantallita.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Pantallita.Location = new System.Drawing.Point(32, 16);
-            this.lbl_Pantallita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Pantallita.Name = "lbl_Pantallita";
-            this.lbl_Pantallita.Size = new System.Drawing.Size(76, 18);
-            this.lbl_Pantallita.TabIndex = 0;
-            this.lbl_Pantallita.Text = "Bienvenido!";
-            // 
             // lbl_Empresa
             // 
             this.lbl_Empresa.AutoSize = true;
@@ -564,85 +663,9 @@
             this.timerInput.Interval = 3500;
             this.timerInput.Tick += new System.EventHandler(this.timerInput_Tick);
             // 
-            // p_BordePantallota
+            // timerLimpieza
             // 
-            this.p_BordePantallota.BackColor = System.Drawing.Color.White;
-            this.p_BordePantallota.Controls.Add(this.p_Pantallota);
-            this.p_BordePantallota.Location = new System.Drawing.Point(17, 20);
-            this.p_BordePantallota.Name = "p_BordePantallota";
-            this.p_BordePantallota.Size = new System.Drawing.Size(143, 89);
-            this.p_BordePantallota.TabIndex = 10;
-            // 
-            // p_Pantallota
-            // 
-            this.p_Pantallota.BackColor = System.Drawing.Color.Black;
-            this.p_Pantallota.Controls.Add(this.button1);
-            this.p_Pantallota.Location = new System.Drawing.Point(12, 10);
-            this.p_Pantallota.Name = "p_Pantallota";
-            this.p_Pantallota.Size = new System.Drawing.Size(119, 68);
-            this.p_Pantallota.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(21, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ver data";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // lbl_ProductoElegido
-            // 
-            this.lbl_ProductoElegido.AutoSize = true;
-            this.lbl_ProductoElegido.BackColor = System.Drawing.SystemColors.InfoText;
-            this.lbl_ProductoElegido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_ProductoElegido.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductoElegido.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_ProductoElegido.Location = new System.Drawing.Point(14, 49);
-            this.lbl_ProductoElegido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ProductoElegido.Name = "lbl_ProductoElegido";
-            this.lbl_ProductoElegido.Size = new System.Drawing.Size(113, 18);
-            this.lbl_ProductoElegido.TabIndex = 11;
-            this.lbl_ProductoElegido.Text = "Producto elegido:";
-            // 
-            // lbl_Precio
-            // 
-            this.lbl_Precio.AutoSize = true;
-            this.lbl_Precio.BackColor = System.Drawing.SystemColors.InfoText;
-            this.lbl_Precio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Precio.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Precio.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Precio.Location = new System.Drawing.Point(46, 80);
-            this.lbl_Precio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Precio.Name = "lbl_Precio";
-            this.lbl_Precio.Size = new System.Drawing.Size(45, 18);
-            this.lbl_Precio.TabIndex = 12;
-            this.lbl_Precio.Text = "Precio";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Controls.Add(this.lbl_Precio);
-            this.panel7.Controls.Add(this.lbl_ProductoElegido);
-            this.panel7.Controls.Add(this.lbl_Pantallita);
-            this.panel7.Location = new System.Drawing.Point(17, 126);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(143, 116);
-            this.panel7.TabIndex = 13;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.lbl_PagueAqui);
-            this.panel1.Controls.Add(this.num_Pago);
-            this.panel1.Location = new System.Drawing.Point(17, 374);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(143, 90);
-            this.panel1.TabIndex = 14;
+            this.timerLimpieza.Interval = 3000;
             // 
             // Form1
             // 
@@ -658,7 +681,7 @@
             this.p_VendingMachine.ResumeLayout(false);
             this.p_VendingMachine.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p_Dispensador)).EndInit();
             this.p_Inferior.ResumeLayout(false);
             this.p_Inferior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -675,13 +698,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Cafe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Te)).EndInit();
             this.P_SidePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.num_Pago)).EndInit();
-            this.p_BordePantallota.ResumeLayout(false);
-            this.p_Pantallota.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Pago)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.p_BordePantallota.ResumeLayout(false);
+            this.p_Pantallota.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -723,15 +746,16 @@
         private System.Windows.Forms.NumericUpDown num_Pago;
         private System.Windows.Forms.Timer timerInput;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lbl_Empujar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel p_BordePantallota;
         private System.Windows.Forms.Panel p_Pantallota;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Data;
         private System.Windows.Forms.Label lbl_Precio;
         private System.Windows.Forms.Label lbl_ProductoElegido;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox p_Dispensador;
+        private System.Windows.Forms.Timer timerLimpieza;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DS4_Parcial2
 {
     public partial class Form1 : Form
@@ -22,34 +23,27 @@ namespace DS4_Parcial2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ResetearUI();
+            lbl_Pantallita.Text = "Bienvenido";
         }
 
         private void BotonClick(object sender, EventArgs e)
         {
-            // 1. Identifica qué botón se presionó
             Button botonPresionado = (Button)sender;
 
-            // 2. Añade su texto a nuestra variable "memoria"
             codigoActual += botonPresionado.Text;
 
-            // 3. Actualiza la "pantalla" (el Label)
             lbl_Pantallita.Text = codigoActual;
 
-            // 4. Reinicia el timer (la parte clave)
-            timerInput.Stop();  // Detiene el conteo anterior
-            timerInput.Start(); // Inicia un nuevo conteo de 2 segundos
+            timerInput.Stop(); 
+            timerInput.Start();
 
-            // 5. ¿Ya se formó un código completo (ej. "H1")?
             if (codigoActual.Length == 2)
             {
-                // ¡Código completo!
-                timerInput.Stop(); // Detenemos el timer, ya no lo necesitamos
+                timerInput.Stop();
 
-                // ---> ¡AQUÍ LLAMAS A LA BASE DE DATOS! <---
                 BuscarProductoEnBD(codigoActual);
 
-                // Limpiamos la memoria para la próxima compra
                 codigoActual = "";
             }
         }
@@ -83,6 +77,7 @@ namespace DS4_Parcial2
             }
             else
             {
+                lbl_Pantallita.Text = "Código no válido";
                 lbl_Pantallita.Text = "--";
             }
         }
@@ -135,6 +130,57 @@ namespace DS4_Parcial2
 
                 ResetearUI();
             }
+        }
+        private void SimularDispensacion(string codigo)
+        {
+            switch (codigo)
+            {
+                case "H1": p_Dispensador.Image = Properties.Resources.H1; break;
+                case "C2": p_Dispensador.Image = Properties.Resources.C2; break;
+                case "F3": p_Dispensador.Image = Properties.Resources.F3; break;
+                case "F2": p_Dispensador.Image = Properties.Resources.F2; break;
+                case "C1": p_Dispensador.Image = Properties.Resources.C1; break;
+                case "H3": p_Dispensador.Image = Properties.Resources.H3; break;
+                case "H2": p_Dispensador.Image = Properties.Resources.H2; break;
+                case "F1": p_Dispensador.Image = Properties.Resources.F1; break;
+                case "C3": p_Dispensador.Image = Properties.Resources.C3; break;
+
+                default:
+                    p_Dispensador.Image = null;
+                    break;
+            }
+            p_Dispensador.Visible = true;
+        }
+        private void timerLimpieza_Tick(object sender, EventArgs e)
+        {
+            timerLimpieza.Stop(); 
+            ResetearUI();         
+            lbl_Pantallita.Text = "Bienvenido";
+
+            btn_1.Enabled = true;
+            btn_2.Enabled = true;
+            btn_3.Enabled = true;
+            btn_F.Enabled = true;
+            btn_C.Enabled = true;
+            btn_H.Enabled = true;
+        }
+        private void ResetearUI()
+        {
+            productoSeleccionado = null;
+            lbl_Pantallita.Text = "--";
+            num_Pago.Value = 0;
+            num_Pago.Enabled = false;
+            btn_Pagar.Enabled = false;
+
+            p_Dispensador.Image = null;
+            p_Dispensador.Visible = false;
+        }
+
+        private void btn_Data_Click(object sender, EventArgs e)
+        {
+            Data data = new Data();
+            data.ShowDialog();
+            this.Hide();
         }
     }
     

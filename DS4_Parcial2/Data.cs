@@ -22,8 +22,14 @@ namespace DS4_Parcial2
             Cerebro cerebro = new Cerebro();
 
             DG_Transacciones.DataSource = cerebro.ObtenerHistorialVentas();
-
             DG_Transacciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btn_Regresar_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close();
         }
     }
 }
