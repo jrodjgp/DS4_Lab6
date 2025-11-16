@@ -457,8 +457,8 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Controls.Add(this.lbl_Precio);
             this.panel7.Controls.Add(this.lbl_ProductoElegido);
+            this.panel7.Controls.Add(this.lbl_Precio);
             this.panel7.Controls.Add(this.lbl_Pantallita);
             this.panel7.Location = new System.Drawing.Point(17, 126);
             this.panel7.Name = "panel7";
@@ -472,7 +472,7 @@
             this.lbl_Precio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_Precio.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Precio.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Precio.Location = new System.Drawing.Point(46, 80);
+            this.lbl_Precio.Location = new System.Drawing.Point(46, 87);
             this.lbl_Precio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Precio.Name = "lbl_Precio";
             this.lbl_Precio.Size = new System.Drawing.Size(45, 18);
@@ -481,33 +481,33 @@
             // 
             // lbl_ProductoElegido
             // 
-            this.lbl_ProductoElegido.AutoSize = true;
             this.lbl_ProductoElegido.BackColor = System.Drawing.SystemColors.InfoText;
             this.lbl_ProductoElegido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_ProductoElegido.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductoElegido.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_ProductoElegido.Location = new System.Drawing.Point(12, 38);
+            this.lbl_ProductoElegido.Location = new System.Drawing.Point(12, 34);
             this.lbl_ProductoElegido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ProductoElegido.MaximumSize = new System.Drawing.Size(0, 100);
             this.lbl_ProductoElegido.Name = "lbl_ProductoElegido";
-            this.lbl_ProductoElegido.Size = new System.Drawing.Size(113, 18);
+            this.lbl_ProductoElegido.Size = new System.Drawing.Size(119, 46);
             this.lbl_ProductoElegido.TabIndex = 11;
             this.lbl_ProductoElegido.Text = "Producto elegido:";
             this.lbl_ProductoElegido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Pantallita
             // 
+            this.lbl_Pantallita.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Pantallita.AutoSize = true;
             this.lbl_Pantallita.BackColor = System.Drawing.SystemColors.InfoText;
             this.lbl_Pantallita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_Pantallita.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Pantallita.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Pantallita.Location = new System.Drawing.Point(32, 16);
+            this.lbl_Pantallita.Location = new System.Drawing.Point(32, 12);
             this.lbl_Pantallita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Pantallita.Name = "lbl_Pantallita";
             this.lbl_Pantallita.Size = new System.Drawing.Size(76, 18);
             this.lbl_Pantallita.TabIndex = 0;
             this.lbl_Pantallita.Text = "Bienvenido!";
+            this.lbl_Pantallita.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // p_BordePantallota
             // 
